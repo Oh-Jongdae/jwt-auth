@@ -30,17 +30,17 @@ public class AuthenticationUserApplication implements CommandLineRunner {
   @Override
   public void run(String... params) {
     UserEntity admin = new UserEntity();
-    admin.setUsername("admin");
-    admin.setPassword("admin");
-    admin.setEmail("admin@email.com");
+    admin.setUsername("spadeAdm");
+    admin.setPassword("6575");
+    admin.setEmail("gusttaa00@gmail.com");
     admin.setUserEntityRoles(new ArrayList<UserEntityRole>(Collections.singletonList(UserEntityRole.ROLE_ADMIN)));
 
     userService.signUp(admin);
 
     UserEntity client = new UserEntity();
-    client.setUsername("client");
-    client.setPassword("client");
-    client.setEmail("client@email.com");
+    client.setUsername("spadeClient");
+    client.setPassword("6575");
+    client.setEmail("gusttaa00@gmail.com");
     client.setUserEntityRoles(new ArrayList<UserEntityRole>(Collections.singletonList(UserEntityRole.ROLE_CLIENT)));
 
     userService.signUp(client);
