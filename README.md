@@ -27,4 +27,8 @@ Apos o build, a aplicacao ficara disponivel localmente em localhost:8080.
 
 Voce pode ver e testar os endpoints acessando o Swagger UI (http://localhost:8080/swagger-ui.html#/)
 
-Qualquer duvida pode entrar em contato!!
+## Deploy
+
+O deploy desta aplicacao foi feita utilizando a plataforma da Heroku.
+
+Qualquer duvida entre em contato!!
