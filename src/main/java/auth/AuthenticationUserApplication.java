@@ -4,6 +4,7 @@ import auth.model.UserEntity;
 import auth.model.UserEntityRole;
 import auth.service.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +15,7 @@ import java.util.Collections;
 
 @SpringBootApplication
 @RequiredArgsConstructor
+@Log4j2
 public class AuthenticationUserApplication implements CommandLineRunner {
 
   final UserService userService;
@@ -29,9 +31,11 @@ public class AuthenticationUserApplication implements CommandLineRunner {
 
   @Override
   public void run(String... params) {
+    log.info("Creating testing admin and client users!");
+
     UserEntity admin = new UserEntity();
     admin.setUsername("admin");
-    admin.setPassword("admin");
+    admin.setPassword("123");
     admin.setEmail("admin@email.com");
     admin.setUserEntityRoles(new ArrayList<UserEntityRole>(Collections.singletonList(UserEntityRole.ROLE_ADMIN)));
 
@@ -39,7 +43,7 @@ public class AuthenticationUserApplication implements CommandLineRunner {
 
     UserEntity client = new UserEntity();
     client.setUsername("client");
-    client.setPassword("client");
+    client.setPassword("123");
     client.setEmail("client@email.com");
     client.setUserEntityRoles(new ArrayList<UserEntityRole>(Collections.singletonList(UserEntityRole.ROLE_CLIENT)));
 

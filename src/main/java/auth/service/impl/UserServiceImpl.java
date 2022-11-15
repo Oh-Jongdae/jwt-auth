@@ -1,21 +1,22 @@
 package auth.service.impl;
 
+import auth.exception.AuthenticationException;
 import auth.model.UserEntity;
 import auth.repository.UserRepository;
 import auth.security.TokenProvider;
 import auth.service.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import javax.servlet.http.HttpServletRequest;
-import auth.exception.AuthenticationException;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
+
   private final UserRepository userRepository;
   private final PasswordEncoder passwordEncoder;
   private final TokenProvider tokenProvider;
