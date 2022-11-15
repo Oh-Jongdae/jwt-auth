@@ -32,7 +32,7 @@ public class AuthenticationUserApplication implements CommandLineRunner {
     UserEntity admin = new UserEntity();
     admin.setUsername("spadeAdm");
     admin.setPassword("6575");
-    admin.setEmail("gusttaa00@gmail.com");
+    admin.setEmail("spadeadm@gmail.com");
     admin.setUserEntityRoles(new ArrayList<UserEntityRole>(Collections.singletonList(UserEntityRole.ROLE_ADMIN)));
 
     userService.signUp(admin);
@@ -40,7 +40,7 @@ public class AuthenticationUserApplication implements CommandLineRunner {
     UserEntity client = new UserEntity();
     client.setUsername("spadeClient");
     client.setPassword("6575");
-    client.setEmail("gusttaa00@gmail.com");
+    client.setEmail("spadeclient00@gmail.com");
     client.setUserEntityRoles(new ArrayList<UserEntityRole>(Collections.singletonList(UserEntityRole.ROLE_CLIENT)));
 
     userService.signUp(client);
